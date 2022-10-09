@@ -1,6 +1,8 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
 
 import Index from '../pages/Index.vue'
+import As from '../pages/As.vue'
+import Md from '../pages/Md.vue'
 
 const routes = [{
     path: "/",
@@ -19,6 +21,16 @@ const routes = [{
     path: '/home', 
     name: 'home', 
     component: Index,
+},
+{ 
+    path: '/as', 
+    name: 'as', 
+    component: As,
+},
+{ 
+    path: '/md', 
+    name: 'md', 
+    component: Md,
 },
 ]
 
