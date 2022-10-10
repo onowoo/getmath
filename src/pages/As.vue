@@ -57,10 +57,10 @@ const getEquation = (amount = 2, max = count.value) => {
             b = Math.round(Math.random() * (max - arr[0]));
             a = arr[0] + b;
         }
-        arr.shift();
-        arr = [a, operator, b];
-        // arr = [a, operator, b].concat(arr);
-        // console.log(arr);
+        // arr.shift();
+        if (a > 0 && b > 0) {
+            arr = [a, operator, b]; 
+        }
     }
     return {
         eq: arr.join(' '),
@@ -73,12 +73,20 @@ const createList = () => {
         list.value.splice(0,list.value.length)
         for (var i = 1; i <= num.value; i++) {
         let equation = getEquation(Math.round(Math.random() * 1) + 2);
-        list.value.push(equation.eq + '=')
+        if (equation.eq.length > 2) {
+                list.value.push(equation.eq + "=");
+            } else {
+                i = i - 1
+            }
         }
     } else {
         for (var i = 1; i <= num.value; i++) {
         let equation = getEquation(Math.round(Math.random() * 1) + 2);
-        list.value.push(equation.eq + '=')
+        if (equation.eq.length > 2) {
+                list.value.push(equation.eq + "=");
+            } else {
+                i = i - 1
+            }
         }
     }
     
