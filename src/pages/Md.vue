@@ -73,7 +73,7 @@ const getEquation = (amount = 2, max = count.value) => {
     var operator = operators[Math.round(Math.random() * 1)];
     var a, b,c,x;
     if (operator == "➗") {
-      a = Math.round(Math.random() * max + 1);
+      a = Math.round(Math.random() * max);
       if (a <= max && a > 1) {
         x = factors(a)
         x.pop()
