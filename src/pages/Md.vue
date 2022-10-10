@@ -37,7 +37,6 @@
   </div>
 </template>
 <script setup>
-
 const list = ref([]);
 const count = ref(100);
 const num = ref(100);
@@ -64,7 +63,6 @@ const removeByValue = (arr, val) => {
     }
    }
 }
-
 const getEquation = (amount = 2, max = count.value) => {
   const res = Math.round(Math.random() * count.value);
   // 运算符
@@ -76,45 +74,54 @@ const getEquation = (amount = 2, max = count.value) => {
     var a, b,c,x;
     if (operator == "➗") {
       a = Math.round(Math.random() * max + 1);
-      x = factors(a)
-      x.pop()
-      removeByValue(x,1)
-      b = x[Math.floor(Math.random()*x.length)]
+      if (a <= max && a > 1) {
+        x = factors(a)
+        x.pop()
+        b = x[Math.floor(Math.random()*x.length)]
+      }
     } else {
       c = Math.round(Math.random() * max );
-      if (c <= count.value) {
+      
         x = factors(c)
         if (x.length > 1) {
           x.pop()
         }
-        removeByValue(x,1)
-        console.log(x);
-        a = x[Math.floor(Math.random()*(x.length - 1))]
+        a = x[Math.floor(Math.random()*x.length)]
+        
         b = c / a 
-      }
+      
     }
-    arr.shift();
-    arr = [a, operator, b];
+    // arr.shift();
+    if (a >1 && b > 1) {
+      arr = [a, operator, b];
+      // console.log(a, operator, b);
+    }
     // arr = [a, operator, b].concat(arr);
-    // console.log(arr);
   }
   return {
     eq: arr.join(" "),
     res: res,
   };
 };
-
 const createList = () => {
   if (list.value.length > 0) {
     list.value.splice(0, list.value.length);
     for (var i = 1; i <= num.value; i++) {
       let equation = getEquation(Math.round(Math.random() * 1) + 2);
-      list.value.push(equation.eq + "=");
+      if (equation.eq.length > 2) {
+        list.value.push(equation.eq + "=");
+      } else {
+        i = i - 1
+      }
     }
   } else {
     for (var i = 1; i <= num.value; i++) {
       let equation = getEquation(Math.round(Math.random() * 1) + 2);
-      list.value.push(equation.eq + "=");
+      if (equation.eq.length > 2) {
+        list.value.push(equation.eq + "=");
+      } else {
+        i = i - 1
+      }
     }
   }
 };
@@ -126,6 +133,4 @@ const printObj = reactive({
   extraHead: "", // 打印头部文字
   dialogVisbile: false,
 });
-
-
 </script>
