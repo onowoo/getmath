@@ -3,6 +3,8 @@ import { createRouter, createWebHashHistory } from 'vue-router'
 import Index from '../pages/Index.vue'
 import As from '../pages/As.vue'
 import Md from '../pages/Md.vue'
+import Ca from '../pages/Ca.vue'
+import Cm from '../pages/Cm.vue'
 
 const routes = [{
     path: "/",
@@ -31,6 +33,16 @@ const routes = [{
     path: '/md', 
     name: 'md', 
     component: Md,
+},
+{ 
+    path: '/ca', 
+    name: 'ca', 
+    component: Ca,
+},
+{ 
+    path: '/cm', 
+    name: 'cm', 
+    component: Cm,
 },
 ]
 
