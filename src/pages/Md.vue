@@ -72,7 +72,7 @@ const getEquation = (amount = 2, max = count.value) => {
       x.pop()
       b = x[Math.floor(Math.random()*x.length)]
     } else {
-      c = Math.round(Math.random() * max + 1);
+      c = Math.round(Math.random() * max );
       if (c <= count.value) {
         x = factors(c)
         if (x.length > 1) {
