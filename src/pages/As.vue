@@ -84,12 +84,12 @@ const createList = () => {
     
 
 }
-const student = ref("***学校*年*班***")
+const student = ref("市二实验一年二班***")
 const printObj = reactive({
     id: "myPrint", // 这里是要打印元素的ID
-    popTitle: "ym", // 打印的标题
+    popTitle: "", // 打印的标题
     extraCss: "", // 打印可引入外部的一个 css 文件
-    extraHead: "123", // 打印头部文字
+    extraHead: "", // 打印头部文字
     dialogVisbile:false
 })
 </script>

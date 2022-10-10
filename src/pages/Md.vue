@@ -125,7 +125,7 @@ const createList = () => {
     }
   }
 };
-const student = ref("***学校*年*班***");
+const student = ref("市二实验一年二班***");
 const printObj = reactive({
   id: "myPrint", // 这里是要打印元素的ID
   popTitle: "", // 打印的标题
