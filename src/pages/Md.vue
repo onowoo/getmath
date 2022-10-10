@@ -56,6 +56,14 @@ const factors = (n) => {
   })
   return num_factors
 }
+const removeByValue = (arr, val) => {
+   for(var i = 0; i < arr.length; i++) {
+    if(arr[i] == val) {
+     arr.splice(i, 1);
+     break;
+    }
+   }
+}
 
 const getEquation = (amount = 2, max = count.value) => {
   const res = Math.round(Math.random() * count.value);
@@ -70,6 +78,7 @@ const getEquation = (amount = 2, max = count.value) => {
       a = Math.round(Math.random() * max + 1);
       x = factors(a)
       x.pop()
+      removeByValue(x,1)
       b = x[Math.floor(Math.random()*x.length)]
     } else {
       c = Math.round(Math.random() * max );
@@ -78,6 +87,7 @@ const getEquation = (amount = 2, max = count.value) => {
         if (x.length > 1) {
           x.pop()
         }
+        removeByValue(x,1)
         console.log(x);
         a = x[Math.floor(Math.random()*(x.length - 1))]
         b = c / a 
