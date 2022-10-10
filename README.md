@@ -1,6 +1,12 @@
-# Vue 3 + Vite
+# Vue 3 + Vite + naiveUI + windicss
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+随机生成指定最大值内、指定题量的加减法、乘除法题的小工具，有好的孩子用的小工具，欢迎加入
+
+yarn install
+
+yarn dev
+
+yarn build
 
 ## Recommended IDE Setup
 
